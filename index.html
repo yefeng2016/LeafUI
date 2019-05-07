@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>leaf</title>
+    <style>
+      * {
+        margin: 0;
+        padding:0;
+        box-sizing: border-box;
+      }
+      body{
+        margin: 20px;
+        font-size: var(--font-size);
+      }
+      :root {
+        --button-height: 32px;
+        --color: #333;
+        --border-radius: 4px;
+        --font-size: 14px;
+        --button-bg: white;
+        --button-active-bg: #eee;
+        --border-color: #999;
+        --border-color-hover: #666;
+      }
+    </style>
+</head>
+<body>
+    <div id="app">
+      <l-button></l-button>
+      {{ message }}
+    </div>
+    <script src="./src/app.js"></script>
+</body>
+</html>

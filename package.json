@@ -4,7 +4,8 @@
   "description": "ui 组件库",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/.bin/parcel index.html --no-cache"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,18 @@
     "ui"
   ],
   "author": "yefeng",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^2.6.10",
+    "vue-hot-reload-api": "^2.3.3"
+  },
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^3.0.0",
+    "parcel-bundler": "^1.12.3",
+    "sass": "^1.20.1",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "alias": {
+    "vue" : "./node_modules/vue/dist/vue.common.js"
+  }
 }
