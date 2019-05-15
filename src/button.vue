@@ -1,8 +1,6 @@
 <template>
-  <button class="l-button" :class="{[`icon-${iconPosition}`]: true}">
-    <svg class="icon" v-if="icon">
-      <use :xlink:href="`#icon-${icon}`"></use>
-    </svg>
+  <button class="le-button" :class="{[`icon-${iconPosition}`]: true}">
+    <le-icon v-if="icon" :name="icon"></le-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -23,7 +21,8 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-  .l-button {
+  .le-button {
+    cursor: pointer;
     height: var(--button-height); border-radius: var(--border-radius); background: var(--button-bg);
     border: 1px solid var(--border-color); padding: 0 1em; font: inherit;
     display: inline-flex;
@@ -33,10 +32,10 @@ export default {
     &:hover { border-color: var(--border-color-hover); }
     &:active { background-color: var(--button-active-bg); }
     &:focus { outline: none; }
-    > .icon { order: 1; margin-right: .2em;}
+    > .le-icon { order: 1; margin-right: .2em;}
     > .content { order: 2; }
     &.icon-right {
-      > .icon { order: 2; margin-right: 0; margin-left: .2em;  }
+      > .le-icon { order: 2; margin-right: 0; margin-left: .2em;  }
       > .content { order: 1; }
     }
   }
