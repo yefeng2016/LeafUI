@@ -1,6 +1,6 @@
 <template>
   <button class="le-button" :class="{[`icon-${iconPosition}`]: true}">
-    <le-icon v-if="icon" :name="icon"></le-icon>
+    <le-icon class="icon" v-if="icon" :name="icon"></le-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -32,10 +32,10 @@ export default {
     &:hover { border-color: var(--border-color-hover); }
     &:active { background-color: var(--button-active-bg); }
     &:focus { outline: none; }
-    > .le-icon { order: 1; margin-right: .2em;}
+    > .icon { order: 1; margin-right: .2em;}
     > .content { order: 2; }
     &.icon-right {
-      > .le-icon { order: 2; margin-right: 0; margin-left: .2em;  }
+      > .icon { order: 2; margin-right: 0; margin-left: .2em;  }
       > .content { order: 1; }
     }
   }
