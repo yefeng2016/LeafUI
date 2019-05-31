@@ -36,12 +36,15 @@
     <le-button icon="right">我爱js</le-button>
     <le-button icon="settings">按钮</le-button>
     <le-button icon="settings" icon-position="right">按钮</le-button>
-    <le-button icon="zan" icon-position="right">按钮</le-button>
+    <le-button icon-position="right" :loading="loading1" @click="loading1 = !loading1">按钮</le-button>
     {{ message }}
     <le-icon name="download"></le-icon>
+    <div style="margin-top: 100px">
+      <le-carousel></le-carousel>
+    </div>
   </div>
   <script src="./src/app.js"></script>
-  <script src="//at.alicdn.com/t/font_1181676_za20n47i95.js"></script>
+  <script src="//at.alicdn.com/t/font_1181676_ui5c068hijj.js"></script>
 </body>
 
 </html>
