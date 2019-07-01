@@ -1,6 +1,7 @@
 <template>
   <button class="le-button" :class="{[`icon-${iconPosition}`]: true}">
-    <le-icon class="icon" v-if="icon" :name="icon"></le-icon>
+    <le-icon v-if="loading"  class="loading" name="loading"></le-icon>
+    <le-icon class="icon" v-if="icon && !loading" :name="icon"></le-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -10,6 +11,10 @@
 export default {
   props: {
     icon: {},
+    loading: {
+      default: false,
+      type: Boolean,
+    },
     iconPosition: {
       default: 'left',
       type: String,
@@ -21,6 +26,14 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+  @keyframes sping {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
   .le-button {
     cursor: pointer;
     height: var(--button-height); border-radius: var(--border-radius); background: var(--button-bg);
@@ -37,6 +50,9 @@ export default {
     &.icon-right {
       > .icon { order: 2; margin-right: 0; margin-left: .2em;  }
       > .content { order: 1; }
+    }
+    .loading {
+      animation: sping 2s infinite linear;
     }
   }
 </style>
