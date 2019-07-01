@@ -1,10 +1,11 @@
 import Vue from 'vue';
-import button from './button.vue';
-import icon from './icon.vue'
+import Button from './button.vue';
+import ButtonGroup from './button-group.vue';
+import Icon from './icon.vue'
 
-Vue.component('le-button', button)
-Vue.component('le-icon', icon)
-Vue.component('le-carousel', carousel)
+Vue.component('le-button', Button)
+Vue.component('le-button-group', ButtonGroup)
+Vue.component('le-icon', Icon)
 new Vue({
   el: '#app',
   data: {
