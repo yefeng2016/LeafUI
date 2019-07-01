@@ -1,6 +1,6 @@
 <template>
-  <button class="le-button" :class="{[`icon-${iconPosition}`]: true}">
-    <le-icon v-if="loading"  class="loading" name="loading"></le-icon>
+  <button class="le-button" :class="{[`icon-${iconPosition}`]: true}" @click="$emit('click')">
+    <le-icon v-if="loading" class="loading icon" name="loading"></le-icon>
     <le-icon class="icon" v-if="icon && !loading" :name="icon"></le-icon>
     <div class="content">
       <slot></slot>
@@ -12,8 +12,8 @@ export default {
   props: {
     icon: {},
     loading: {
-      default: false,
       type: Boolean,
+      default: false
     },
     iconPosition: {
       default: 'left',
@@ -26,7 +26,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-  @keyframes sping {
+  @keyframes spin {
     0% {
       transform: rotate(0deg);
     }
@@ -42,6 +42,7 @@ export default {
     justify-content: center;
     align-items: center;
     vertical-align: middle;
+    line-height: 1;
     &:hover { border-color: var(--border-color-hover); }
     &:active { background-color: var(--button-active-bg); }
     &:focus { outline: none; }
@@ -51,8 +52,8 @@ export default {
       > .icon { order: 2; margin-right: 0; margin-left: .2em;  }
       > .content { order: 1; }
     }
-    .loading {
-      animation: sping 2s infinite linear;
+    > .loading {
+      animation: spin 2s linear infinite;
     }
   }
 </style>
