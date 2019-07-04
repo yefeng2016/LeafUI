@@ -28,11 +28,11 @@ export default {
       &:not(:first-child) {
         margin-left: -1px;
       }
-      &:first-child {
+      &:first-of-type{
         border-top-left-radius: var(--border-radius);
         border-bottom-left-radius: var(--border-radius);
       }
-      &:last-child {
+      &:last-of-type {
         border-top-right-radius: var(--border-radius);
         border-bottom-right-radius: var(--border-radius);
       }

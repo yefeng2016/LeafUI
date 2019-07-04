@@ -14,4 +14,8 @@ new Vue({
   }
 })
 
-// 
+// 单元测试
+// 测试button
+{
+  console.log(Button)
+}
