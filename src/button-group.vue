@@ -8,7 +8,6 @@
 export default {
   mounted () {
     // 检测子元素是是否为l-button，否则警告
-    console.log(this.$el.children);
     for (let node of this.$el.children) {
       let name = node.nodeName.toLowerCase()
       if (name !== 'button') {
